@@ -14,7 +14,6 @@ export default function WeeklyGrid({ habits, logsByHabit, days: customDays }) {
       </div>
     );
   }
-
   return (
     <div className="card p-4 sm:p-5 w-full max-w-full min-w-0">
       <div className="w-full max-w-full overflow-x-auto">

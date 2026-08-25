@@ -49,7 +49,6 @@ export default function HabitForm({ initial, onSubmit, onCancel, submitting }) {
             ))}
           </select>
         </div>
-
         <div>
           <label className="label">Frequency</label>
           <select className="input" value={form.frequency} onChange={set("frequency")}>
@@ -76,7 +75,7 @@ export default function HabitForm({ initial, onSubmit, onCancel, submitting }) {
           ))}
         </div>
       </div>
-
+      
       <div>
         <label className="label">Color</label>
         <div className="flex gap-2">
