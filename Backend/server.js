@@ -64,10 +64,14 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 8000;
 
-connectDB().then(async () => {
-  await createAdmin();
+app.listen(PORT, "0.0.0.0", async () => {
+  console.log(`Server running on port ${PORT}`);
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on port ${PORT}`);
-  });
+  try {
+    await connectDB();
+    await createAdmin();
+    console.log("Database connected and admin initialized");
+  } catch (error) {
+    console.error("Startup error:", error);
+  }
 });
