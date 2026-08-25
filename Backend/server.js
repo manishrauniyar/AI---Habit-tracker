@@ -4,7 +4,6 @@ import express from "express";
 import cors from "cors";
 
 import { connectDB } from "./config/db.js";
-
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 
 import authRoutes from "./routes/auth.js";
@@ -69,8 +68,10 @@ app.listen(PORT, "0.0.0.0", async () => {
 
   try {
     await connectDB();
+    console.log("Database connected");
+
     await createAdmin();
-    console.log("Database connected and admin initialized");
+    console.log("Admin initialized");
   } catch (error) {
     console.error("Startup error:", error);
   }
